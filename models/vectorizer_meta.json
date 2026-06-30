@@ -1,0 +1,4 @@
+{
+    "vectorizer_type": "count",
+    "best_model_name": "Logistic Regression"
+}
