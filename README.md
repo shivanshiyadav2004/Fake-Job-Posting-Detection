@@ -1,145 +1,328 @@
-# Fake Job Posting Detection System
+# 🚀 Fake Job Posting Detection System
 
-An end-to-end Machine Learning and Natural Language Processing (NLP) web application that detects whether job postings are legitimate or fraudulent. The application features multi-model training with hyperparameter grid search, detailed Exploratory Data Analysis (EDA) visualizations, real-time predictions, local prediction explainability, prediction history logging, and custom PDF report exports.
+An end-to-end Machine Learning and Natural Language Processing (NLP) application that detects whether a job posting is legitimate or fraudulent.
+
+The project leverages advanced text preprocessing, feature engineering, multiple machine learning algorithms, hyperparameter tuning, explainable AI techniques, and an interactive Streamlit dashboard to provide real-time fraud detection.
 
 ---
 
-## 🚀 Features
-- **Data Preprocessing & Cleaning**: Automates text conversion to lowercase, URL and email removal, punctuation/number stripping, stopword filtering, and lemmatization (via NLTK WordNet).
-- **Exploratory Data Analysis (EDA)**: Programmatically generates and persists interactive charts (missing values heatmaps, class distributions, word frequencies, word clouds, location frequencies, employment types, and metadata correlations).
-- **Multi-model Training & Tuning**: Automatically benchmarks:
-  - Logistic Regression
-  - Multinomial Naive Bayes
-  - Linear SVM (SGDClassifier with modified huber loss)
-  - Decision Trees
-  - Random Forests
-  - XGBoost (if package is compiled)
-  - Uses `GridSearchCV` to optimize the best F1-Score to handle class imbalances.
-- **Explainable Predictions**: Extracts keyword influences for predictions, highlighting which words push the model towards categorizing a listing as legitimate or fraudulent.
-- **Reporting & Auditing**:
-  - Download prediction reports as beautifully formatted PDFs.
-  - Export prediction history as a CSV file.
-- **Interactive Streamlit Web Dashboard**: Sleek dark mode UI with card layouts, quick mock templates for testing, real-time prediction forms, EDA gallery, and interactive retrainer control.
+## 🌐 Live Demo
+
+🚀 Try the Application:
+
+https://fake-job-posting-detection-dasj6rqclcrdqdcyntottw.streamlit.app/
+
+---
+
+## 📌 Project Overview
+
+Fake job postings have become increasingly common across online job portals, leading to financial loss and privacy risks for job seekers.
+
+This project aims to solve that problem by building an intelligent system capable of identifying fraudulent job advertisements using Machine Learning and NLP techniques.
+
+The application allows users to:
+
+- Analyze job descriptions in real time
+- Detect fraudulent postings
+- Understand prediction reasoning
+- Generate PDF reports
+- Export prediction history
+- Explore detailed dataset analytics
+
+---
+
+## ✨ Features
+
+### 🔹 Data Preprocessing & Cleaning
+
+- Text normalization
+- Lowercase conversion
+- URL removal
+- Email removal
+- Punctuation removal
+- Number removal
+- Stopword removal
+- Lemmatization using NLTK WordNet
+
+### 🔹 Exploratory Data Analysis (EDA)
+
+- Missing Value Analysis
+- Fraud vs Legitimate Distribution
+- Word Frequency Analysis
+- Word Clouds
+- Location Distribution
+- Employment Type Analysis
+- Metadata Correlation Analysis
+
+### 🔹 Machine Learning Models
+
+The system automatically trains and evaluates multiple models:
+
+- Logistic Regression
+- Multinomial Naive Bayes
+- Linear SVM
+- Decision Tree
+- Random Forest
+- XGBoost
+
+### 🔹 Hyperparameter Optimization
+
+- GridSearchCV
+- Cross Validation
+- F1-Score Optimization
+- Model Comparison
+
+### 🔹 Explainable AI
+
+Provides keyword-based explanations showing which terms contributed most to the prediction.
+
+### 🔹 Reporting & Auditing
+
+- PDF Report Generation
+- CSV Export
+- Prediction History Tracking
+
+### 🔹 Interactive Streamlit Dashboard
+
+- Dark Mode Interface
+- Real-Time Predictions
+- Model Retraining
+- EDA Gallery
+- Sample Job Templates
+
+---
+
+## 🛠️ Tech Stack
+
+### Programming Language
+
+- Python
+
+### Machine Learning
+
+- Scikit-Learn
+- XGBoost
+
+### NLP
+
+- NLTK
+- TF-IDF Vectorization
+
+### Data Analysis
+
+- Pandas
+- NumPy
+
+### Data Visualization
+
+- Matplotlib
+- Seaborn
+- WordCloud
+
+### Web Framework
+
+- Streamlit
+
+### Model Persistence
+
+- Joblib
 
 ---
 
 ## 📂 Project Structure
 
-```
+```text
 Fake_JOB_Posting_Portal/
 │
-├── dataset/                    # Stores datasets & prediction history
-│   └── fake_job_postings.csv   # Target dataset (automatically downloaded)
+├── assets/
+│   └── Images and visual assets
 │
-├── models/                     # Saved models and vectorizers
-│   ├── best_model.joblib       # Persisted top-performing model
-│   ├── vectorizer.joblib       # Persisted TF-IDF/Count vectorizer
-│   ├── model_comparison.json   # Model training comparison statistics
-│   └── vectorizer_meta.json    # Vectorizer configurations
+├── dataset/
+│   ├── fake_job_postings.csv
+│   └── prediction_history.csv
 │
-├── src/                        # Source python scripts
-│   ├── preprocessing.py        # Text cleaning and lemmatization
-│   ├── train.py                # Hyperparameter tuning and model training
-│   ├── evaluate.py             # EDA plotting and performance metric evaluations
-│   ├── predict.py              # Real-time predictor and keyword explainers
-│   └── utils.py                # Folder, download, PDF, and history utilities
+├── models/
+│   ├── best_model.joblib
+│   ├── vectorizer.joblib
+│   ├── model_comparison.json
+│   └── vectorizer_meta.json
 │
-├── assets/                     # Saved EDA and model performance charts
-├── app.py                      # Streamlit application web entry point
-├── requirements.txt            # Python dependencies list
-└── README.md                   # Project documentation
+├── src/
+│   ├── preprocessing.py
+│   ├── training.py
+│   ├── prediction.py
+│   ├── explainability.py
+│   └── visualization.py
+│
+├── app.py
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
-## 🛠️ Installation Guide
+## ⚙️ Machine Learning Pipeline
 
-### Prerequisites
-- Python 3.11 or later
-- Access to terminal/command prompt
+### Step 1: Data Collection
 
-### Setup Steps
-1. **Clone or Navigate to Project Directory**:
-   ```bash
-   cd c:/Users/suraj/OneDrive/Desktop/Fake_JOB_Posting_Portal
-   ```
+- Import dataset
+- Validate records
 
-2. **Create a Virtual Environment (Recommended)**:
-   ```bash
-   python -m venv venv
-   # Activate on Windows:
-   venv\Scripts\activate
-   # Activate on macOS/Linux:
-   source venv/bin/activate
-   ```
+### Step 2: Data Preprocessing
 
-3. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+- Clean text
+- Remove noise
+- Lemmatization
+- Stopword filtering
+
+### Step 3: Feature Engineering
+
+- TF-IDF Vectorization
+
+### Step 4: Model Training
+
+- Train multiple algorithms
+- Compare performance
+
+### Step 5: Hyperparameter Tuning
+
+- GridSearchCV Optimization
+
+### Step 6: Evaluation
+
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+
+### Step 7: Deployment
+
+- Streamlit Web Application
 
 ---
 
-## 💻 Usage & Running
+## 📊 Key Functionalities
 
-### 1. Run Model Training (First-time setup)
-To initialize folders, download the Kaggle dataset (~50MB), generate EDA plots, perform grid search hyperparameter tuning across all models, and persist the best model, execute the train script:
+### Fraud Detection
+
+Predicts whether a job posting is:
+
+✅ Legitimate
+
+❌ Fraudulent
+
+### Explainable Predictions
+
+Displays important keywords influencing the prediction.
+
+### Model Retraining
+
+Allows users to retrain models directly from the dashboard.
+
+### Prediction History
+
+Stores all predictions for auditing and review.
+
+### Report Generation
+
+Generates downloadable PDF reports.
+
+---
+
+## 📸 Screenshots
+
+### Home Page
+
+![Home](./assets/home.png)
+
+### Prediction Dashboard
+
+![Dashboard](./assets/dashboard.png)
+
+### Login Page
+
+![Login](./assets/login.png)
+
+### Registration Page
+
+![Register](./assets/register.png)
+
+### Report Generation
+
+![Report](./assets/report.png)
+
+---
+
+## 🎯 Project Highlights
+
+✔ Built an end-to-end NLP-based fraud detection system
+
+✔ Applied Machine Learning and Natural Language Processing techniques
+
+✔ Implemented multiple classification models
+
+✔ Performed hyperparameter optimization using GridSearchCV
+
+✔ Developed an interactive Streamlit dashboard
+
+✔ Added explainable AI features
+
+✔ Integrated PDF report generation
+
+✔ Enabled prediction history tracking and export
+
+---
+
+## 🚀 Installation
+
+### Clone Repository
+
 ```bash
-# Recommended: Run on the full dataset
-python src/train.py
-
-# Optional: Run on a sampled dataset (5,000 records) to speed up Grid Search locally
-python src/train.py --sample
+git clone https://github.com/shivanshiyadav2004/Fake_JOB_Posting_Portal.git
 ```
 
-You can choose to use CountVectorizer instead of TF-IDF using the `--vectorizer` flag:
+### Navigate to Project
+
 ```bash
-python src/train.py --vectorizer count
+cd Fake_JOB_Posting_Portal
 ```
 
-### 2. Run the Streamlit Web Application
-Once training completes, start the web interface:
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run Application
+
 ```bash
 streamlit run app.py
 ```
-This will spin up a local server. Your web browser should automatically open the dashboard page.
 
 ---
 
-## 🏗️ Architecture & Processing Pipeline
+## 📈 Future Improvements
 
-```
-+--------------------------------------------------------+
-|                      Streamlit UI                      |
-| (Overview stats, EDA plots, prediction, retraining)    |
-+---------------------------+----------------------------+
-                            |
-                     predicts input text
-                            |
-                            v
-+--------------------------------------------------------+
-|                   NLP Preprocessing                    |
-| (Text Fusion -> Regex Cleaning -> Stopwords -> Lemma) |
-+---------------------------+----------------------------+
-                            |
-                     vectorized words
-                            |
-                            v
-+--------------------------------------------------------+
-|             Vectorizer & Model Persistence             |
-|   (loads joblib vectorizers & tuned classifier)        |
-+---------------------------+----------------------------+
-                            |
-                    predictions & proba
-                            |
-                            v
-+--------------------------------------------------------+
-|                     PDF Generator                      |
-|     (Outputs styled visual verification report)        |
-+--------------------------------------------------------+
-```
+- Deep Learning Models (LSTM/BERT)
+- Real-Time API Integration
+- Cloud Deployment
+- User Authentication
+- Advanced Explainable AI
+- Multilingual Fraud Detection
 
-1. **Preprocessing Pipeline**: Combines text from the `title`, `company_profile`, `description`, `requirements`, `benefits`, and `location` columns. The text is lowercased, and punctuation, numbers, special characters, and NLTK stop words are removed. Words are lemmatized to their dictionary base form.
-2. **Feature Extraction**: Engineered using TF-IDF Vectorization or CountVectorizer (Bag of Words) with unigram and bigram representation (`ngram_range=(1,2)`) and a limit of 5,000 top features.
-3. **Model Selection**: Optimizes F1-Score via Grid Search across classifiers. The best estimator is serialized as `models/best_model.joblib`.
-4. **Predictive Analytics**: Inputs from the prediction form are tokenized and scored. If the model is linear, exact coefficients are used to present local keyword explanations. If the model is tree-based, global importances scaled by TF-IDF scores are used.
+---
+
+## 👨‍💻 Author
+
+**Shivanshi Yadav**
+
+Computer Science Engineering Student
+
+- GitHub: https://github.com/shivanshiyadav2004
+- LinkedIn: https://www.linkedin.com/in/shivanshi-yadav-593188308
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
