@@ -5,6 +5,19 @@ An end-to-end Machine Learning and Natural Language Processing (NLP) application
 The project leverages advanced text preprocessing, feature engineering, multiple machine learning algorithms, hyperparameter tuning, explainable AI techniques, and an interactive Streamlit dashboard to provide real-time fraud detection.
 
 ---
+## 🛠️ Tech Stack
+
+![Python](https://img.shields.io/badge/Python-Programming-blue?style=for-the-badge&logo=python)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange?style=for-the-badge)
+![NLP](https://img.shields.io/badge/NLP-NLTK-yellow?style=for-the-badge)
+![TF-IDF](https://img.shields.io/badge/TF--IDF-Feature%20Engineering-red?style=for-the-badge)
+![XGBoost](https://img.shields.io/badge/XGBoost-Classification-success?style=for-the-badge)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-purple?style=for-the-badge&logo=pandas)
+![NumPy](https://img.shields.io/badge/NumPy-Computing-blue?style=for-the-badge&logo=numpy)
+![Streamlit](https://img.shields.io/badge/Streamlit-Deployment-red?style=for-the-badge&logo=streamlit)
+![EDA](https://img.shields.io/badge/EDA-Visualization-green?style=for-the-badge)
+![GridSearchCV](https://img.shields.io/badge/GridSearchCV-Hyperparameter%20Tuning-black?style=for-the-badge)
+---
 
 ## 🌐 Live Demo
 
