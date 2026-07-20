@@ -232,25 +232,19 @@ Generates downloadable PDF reports.
 ## 📸 Screenshots
 
 ### Home Page
+![Home](./screenshots/home.png)
 
-![Home](./assets/home.png)
+### Dashboard
+![Dashboard](./screenshots/dashboard.png)
 
-### Prediction Dashboard
+### Model Training
+![Model Training](./screenshots/modeltraining.png)
 
-![Dashboard](./assets/dashboard.png)
+### System Architecture
+![System Architecture](./screenshots/systemarchitecture.png)
 
-### Login Page
-
-![Login](./assets/login.png)
-
-### Registration Page
-
-![Register](./assets/register.png)
-
-### Report Generation
-
-![Report](./assets/report.png)
-
+### Verification Results
+![Verification](./screenshots/verification.png)
 ---
 
 ## 🎯 Project Highlights
