@@ -14,6 +14,26 @@ https://fake-job-posting-detection-dasj6rqclcrdqdcyntottw.streamlit.app/
 
 ---
 
+## 📸 Screenshots
+
+### Home Page
+![Home](./screenshots/home.png)
+
+### Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+### Model Training
+![Model Training](./screenshots/modeltraining.png)
+
+### System Architecture
+![System Architecture](./screenshots/systemarchitecture.png)
+
+### Verification Results
+![Verification](./screenshots/verification.png)
+
+
+---
+
 ## 📌 Project Overview
 
 Fake job postings have become increasingly common across online job portals, leading to financial loss and privacy risks for job seekers.
@@ -229,23 +249,7 @@ Generates downloadable PDF reports.
 
 ---
 
-## 📸 Screenshots
 
-### Home Page
-![Home](./screenshots/home.png)
-
-### Dashboard
-![Dashboard](./screenshots/dashboard.png)
-
-### Model Training
-![Model Training](./screenshots/modeltraining.png)
-
-### System Architecture
-![System Architecture](./screenshots/systemarchitecture.png)
-
-### Verification Results
-![Verification](./screenshots/verification.png)
----
 
 ## 🎯 Project Highlights
 
